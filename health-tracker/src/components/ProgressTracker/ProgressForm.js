@@ -45,21 +45,26 @@ const ProgressForm = ({progress, setProgress}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} id='progress-form'>
+        <div>
+
+                <h1 >Fill out the following form to set your goals for this week ! </h1>
+
+        <form onSubmit={handleSubmit} id='progress-form' >
             <div>
                 <label >Goal for total duration of exercise in a week:</label>
                 <input placeholder='minutes' required type='number' onChange={handleDuration} />
             </div>
             <div>
-                <label > Goal for calories burned:</label>
-                <input placeholder='calories' required type='number' onChange={handleCalories} />
+                <label > Goal for calories burned (at least 100):</label>
+                <input placeholder='calories' required type='number' min={100} onChange={handleCalories} />
             </div>
             <div>
                 <label >Start Day:</label>
-                <input type='date' required onChange={handleStartDay} />
+                <input type='date' required onChange={handleStartDay}  max={new Date().toISOString().split('T')[0]} min={new Date().toISOString().split('T')[0]}  />
             </div>
             <button type='submit'>Submit</button>
         </form>
+        </div>
     )
 
 

@@ -29,6 +29,8 @@ const ActivityForm = ({ setPosts }) => {
             return updatedPosts
         })
     }
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 7);
 
     return (
 
@@ -40,7 +42,7 @@ const ActivityForm = ({ setPosts }) => {
             </div>
             <div>
                 <label >Date:</label>
-                <input type='date' required />
+                <input type='date'  min={new Date().toISOString().split('T')[0]} max={maxDate.toISOString().split('T')[0]} required />
             </div>
             <div>
                 <label >Duration:</label>
@@ -63,7 +65,7 @@ const ActivityForm = ({ setPosts }) => {
                 </div>
                 <label >Calories Burned:</label>
 
-                <input placeholder='calories burned' required type='number' />
+                <input placeholder='calories burned' required type='number'/>
             </div>
 
 

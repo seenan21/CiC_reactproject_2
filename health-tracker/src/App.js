@@ -16,10 +16,16 @@ function App() {
       {/*    <header className="App-header">
          Fitness Tracker
        </header> */}
-      <ProgressPost goals={progress} />
+      
+      <br></br>
+      <br></br>
+      <br></br>
       <ProgressForm progress = {progress} setProgress={setProgress} />
       <ActivityForm setPosts={setPosts} />
+      
       {posts && <ActivityLog posts={posts} />}
+      {posts && <ProgressPost goals={progress}  posts = {posts}/>}
+
     </div>
 
   );
