@@ -49,6 +49,7 @@ const ProgressPost = ({ goals, posts }) => {
     
     
     const options = {
+        responsive:true,
         title: {
             text: "Weekly goals for week starting from " + String(goals[2]),
         },
@@ -77,9 +78,9 @@ const ProgressPost = ({ goals, posts }) => {
 
 
     return (
-        <div style={{ width: '800px', height: '400px' }}>
+        <div className='prog-post' style={{ width: '800px', height: '400px' }}>
             <h2>Progress Tracker</h2>
-            <CanvasJSChart  options={options} />
+            <CanvasJSChart  options={options} containerProps={{ width: '100%', height: '300px' }} />
         </div>
     )
 
