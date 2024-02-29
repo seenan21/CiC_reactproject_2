@@ -9,6 +9,28 @@ const ActivityForm = ({ setPosts }) => {
         setRadio(e.target.value)
     }
 
+    
+    const putActivity = (activity, date, duration, intensity, calories) => {
+        fetch('https://65e0e270d3db23f7624a3bf8.mockapi.io/act/activities', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                activity, date, duration, intensity, calories
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+    
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -19,15 +41,16 @@ const ActivityForm = ({ setPosts }) => {
         
         console.log("Activity: "+ activity,"date: " + date,"duration: " + duration,"intensity: "+radio, "calories: " + calories);
         
-        setPosts(x => {
-            console.log("updating", x);
+        putActivity(activity, date, duration, radio, calories);
+        e.target[0].value = '';
+        e.target[1].value = '';
+        e.target[2].value = '';
+        e.target[7].value = '';
 
-            let updatedPosts = [...x]
-            updatedPosts.unshift({
-                activity, date, duration, calories, intensity: radio
-            })
-            return updatedPosts
-        })
+        setPosts((prev) => {
+            return [...prev, { activity, date, duration, intensity: radio, calories }]
+        }
+        )
     }
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 7);
