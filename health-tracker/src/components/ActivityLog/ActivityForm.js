@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 const ActivityForm = ({ setPosts }) => {
-
+    // State to control radio buttons
     const [radio, setRadio] = useState('low')
 
     const handleRadio = (e) => {
@@ -33,6 +32,7 @@ const ActivityForm = ({ setPosts }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        // getting the html elements
         let activity = e.target[0].value;
         let date = e.target[1].value;
         let duration = parseInt(e.target[2].value);
@@ -40,12 +40,16 @@ const ActivityForm = ({ setPosts }) => {
 
         console.log("Activity: " + activity, "date: " + date, "duration: " + duration, "intensity: " + radio, "calories: " + calories);
 
+        // uploads the activity.
         putActivity(activity, date, duration, radio, calories);
+
+        // Resets input on submit
         e.target[0].value = '';
         e.target[1].value = '';
         e.target[2].value = '';
         e.target[7].value = '';
 
+        // adds the new activity locally
         setPosts((prev) => {
             return [...prev, { activity, date, duration, intensity: radio, calories }]
         }
@@ -96,8 +100,6 @@ const ActivityForm = ({ setPosts }) => {
             <button type=''>Submit</button>
         </form>
     )
-
-    // Implement this function to handle the form submission
 
 
 }

@@ -1,7 +1,7 @@
 import ActivityPost from "./ActivityPost"
 
 export default function ActivityLog({posts}) {
-    console.log(posts);
+    console.log("Posts rendering:",posts);
     
     return(
         <div className="activity-log-container">

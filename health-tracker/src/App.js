@@ -14,34 +14,28 @@ function App() {
 
 
 
-  const fetchPosts =() => {
+  const fetchPosts = () => {
     axios.get("https://65e0e270d3db23f7624a3bf8.mockapi.io/act/activities")
-    .then((response) => {
-      setPosts(response.data);
-    })
+      .then((response) => {
+        setPosts(response.data);
+      })
   }
 
+  // Fetches the activities from MockApi
   useEffect(() => {
     fetchPosts();
   }, [])
 
-  if (posts) {
-    console.log("wtf");
-  }
 
   return (
     <div className="App">
-      {/*    <header className="App-header">
-         Fitness Tracker
-       </header> */}
+      <header className="App-header">
+        <h1>Fitness Tracker</h1>
+      </header>
 
-      <br></br>
-      <br></br>
-      <br></br>
-      <h1>Fitness Tracker</h1>
       <div className='progress-container'>
         <ProgressForm progress={progress} setProgress={setProgress} />
-        {posts.length>0 && <ProgressPost goals={progress} posts={posts} />}
+        {posts.length > 0 && <ProgressPost goals={progress} posts={posts} />}
 
       </div>
       {progress[0] > 0 && <ActivityForm setPosts={setPosts} />}
