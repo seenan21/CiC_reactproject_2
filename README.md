@@ -8,9 +8,11 @@ https://cic-reactproject-2.onrender.com/
 
 ## Team
 Seenan
+
 Nicholas
 
 ##
 Seenan: Progress Visualizer
+
 Nicholas: Activity Log
 
