@@ -78,7 +78,7 @@ const ProgressPost = ({ goals, posts }) => {
 
 
     return (
-        <div className='prog-post' style={{ width: '800px', height: '400px' }}>
+        <div className='prog-post' style={{ width: '30rem', height: '400px' }}>
             <h2>Progress Tracker</h2>
             <CanvasJSChart  options={options} containerProps={{ width: '100%', height: '300px' }} />
         </div>

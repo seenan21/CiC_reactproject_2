@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import { useEffect, useState } from 'react';
 import ActivityForm from './components/ActivityLog/ActivityForm'
 import ActivityLog from './components/ActivityLog/ActivityLog'
@@ -39,6 +38,7 @@ function App() {
       <br></br>
       <br></br>
       <br></br>
+      <h1>Fitness Tracker</h1>
       <div className='progress-container'>
         <ProgressForm progress={progress} setProgress={setProgress} />
         {posts.length>0 && <ProgressPost goals={progress} posts={posts} />}

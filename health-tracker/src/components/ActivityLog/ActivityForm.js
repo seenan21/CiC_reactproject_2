@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import './Activity.css'
 const ActivityForm = ({ setPosts }) => {
 
     const [radio, setRadio] = useState('low')
@@ -9,7 +8,7 @@ const ActivityForm = ({ setPosts }) => {
         setRadio(e.target.value)
     }
 
-    
+
     const putActivity = (activity, date, duration, intensity, calories) => {
         fetch('https://65e0e270d3db23f7624a3bf8.mockapi.io/act/activities', {
             method: 'POST',
@@ -28,7 +27,7 @@ const ActivityForm = ({ setPosts }) => {
                 console.error('Error:', error);
             });
     }
-    
+
 
 
     const handleSubmit = (e) => {
@@ -38,9 +37,9 @@ const ActivityForm = ({ setPosts }) => {
         let date = e.target[1].value;
         let duration = parseInt(e.target[2].value);
         let calories = parseInt(e.target[7].value);
-        
-        console.log("Activity: "+ activity,"date: " + date,"duration: " + duration,"intensity: "+radio, "calories: " + calories);
-        
+
+        console.log("Activity: " + activity, "date: " + date, "duration: " + duration, "intensity: " + radio, "calories: " + calories);
+
         putActivity(activity, date, duration, radio, calories);
         e.target[0].value = '';
         e.target[1].value = '';
@@ -57,22 +56,25 @@ const ActivityForm = ({ setPosts }) => {
 
     return (
 
-        <form onSubmit={handleSubmit} id='activity-form'>
+        <form onSubmit={handleSubmit} id='activity-form' className='card'>
             <div>
 
                 <label >Activity:</label>
-                <input id='activity' placeholder='Name of Activity' required />
+                <input id='activity' placeholder='Name of Activity' type='text' required />
             </div>
             <div>
                 <label >Date:</label>
-                <input type='date'  min={new Date().toISOString().split('T')[0]} max={maxDate.toISOString().split('T')[0]} required />
+                <input type='date' min={new Date().toISOString().split('T')[0]} max={maxDate.toISOString().split('T')[0]} required />
             </div>
             <div>
                 <label >Duration:</label>
                 <input placeholder='minutes' required type='number' />
 
             </div>
-            <label>Intensity: </label>
+            <div>
+                <label>Intensity: </label>
+
+            </div>
             <div>
                 <div>
                     <input type="radio" id="option1" name="group1" value="low" onChange={handleRadio} required />
@@ -85,10 +87,9 @@ const ActivityForm = ({ setPosts }) => {
                     <label htmlFor="option4">Very High</label>
                 </div>
                 <div>
+                    <label >Calories Burned:</label>
+                    <input placeholder='calories burned' required type='number' />
                 </div>
-                <label >Calories Burned:</label>
-
-                <input placeholder='calories burned' required type='number'/>
             </div>
 
 
