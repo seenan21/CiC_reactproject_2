@@ -4,7 +4,7 @@
 https://cic-reactproject-2.onrender.com/
 
 ## Component tree
-![tree](https://media.discordapp.net/attachments/1203836169239138375/1212978781351059536/Untitled_Diagram.drawio.png?ex=65f3cd85&is=65e15885&hm=4f175996ae4bf8eaec023ad46c7aa33b68ce4d63590c3872fe8b9910fa6bc898&=&format=webp&quality=lossless&width=637&height=619)
+![tree](https://cdn.discordapp.com/attachments/635352926755356687/1213030345927303178/Untitled_Diagram.drawio_1.png?ex=660fad0b&is=65fd380b&hm=050559e357115ab1bc5a098c4fc17185acf2002999418a8b6e5601f0dcdfdb34&)
 
 ## Team
 Seenan
@@ -16,3 +16,4 @@ Seenan: Progress Visualizer
 
 Nicholas: Activity Log
 
+https://cdn.discordapp.com/attachments/635352926755356687/1213030345927303178/Untitled_Diagram.drawio_1.png?ex=660fad0b&is=65fd380b&hm=050559e357115ab1bc5a098c4fc17185acf2002999418a8b6e5601f0dcdfdb34&
